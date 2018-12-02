@@ -1,0 +1,12 @@
+<h3>Existing Tags <span class="badge badge-secondary badge-dark">News</span></h3>
+<%
+    var btnColors= ['primary','secondary','success','danger','warning','info','dark'];
+    var colorIndex = 0;
+    var tags = apiTags.getState();
+    tags.forEach(function(tag){%>
+    <a class="<%='btn btn-outline-'+btnColors[colorIndex] %>"><%= tag%></a>
+    if(colorIndex==btnColors.length-1)
+    {
+        colorIndex=0;
+    }
+<%});%>
